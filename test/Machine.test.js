@@ -58,11 +58,28 @@ describe('the vending machine', () => {
         // setup
         const machine = new Machine();
         let actual = machine.selectItem('Chips')
-       
+
         // exercise
         let expected = 'The item you selected is unavailable'
-        
+
         // assert
         expect(expected).toEqual(actual);
     });
+    // As a customer, I want to see a message if my deposit is insufficient, so that I know to add more money.
+    // Given I have made a choice, 
+    // when I have not deposited enough money for that item, 
+    // then I see a message telling me how much more to deposit.
+    // `selectItem(code)` returns `'Your deposit is insufficient.  Please add Rs 20 for this item'`
+    it('should show insufficient deposite amount ', () => {
+        // setup
+        const machine = new Machine();
+        let depositedMoney = machine.deposite(330)
+        let actual = machine.selectItem('chocolate')
+        // exercise
+        let expected = 'The item you selected is unavailable'
+
+        // assert
+        expect(expected).toEqual(actual);
+    });
+
 });
