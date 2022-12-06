@@ -8,4 +8,7 @@ module.exports = class Machine {
     seeSelections() {
         return items
     }
+    deposite(depositeMoney){
+        return `You have deposited Rs ${depositeMoney}`
+    }
 };
