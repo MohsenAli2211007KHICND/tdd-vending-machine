@@ -14,4 +14,17 @@ module.exports = class Machine {
         }
         return null
     }
+    selectItem(code) {
+        for (let i=0; i<items.length; i++){
+            for(let k in items[i]){
+                if (k==code){
+                    return  `${code} is available`
+                }
+                else {
+                   return 'The item you selected is unavailable' 
+                }
+            }
+            }
+            
+    }
 };
