@@ -10,7 +10,7 @@ module.exports = class Machine {
     }
     deposite(depositeMoney){
         if (depositeMoney %10 ===0){
-        return `You have deposited Rs ${depositeMoney}`
+        return depositeMoney
         }
         return null
     }
