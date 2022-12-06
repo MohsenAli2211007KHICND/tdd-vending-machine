@@ -19,9 +19,16 @@ describe('the vending machine', () => {
     it('should show money i have deposited', () => {
         // setup
         const machine = new Machine();
-        let depositedMoney = machine.deposite(100)
+        let depositedMoney = machine.deposite(25)
         // exercise
-        const expected = 'You have deposited Rs 100'
+        let expected
+        if (depositedMoney===null){
+             expected =null
+        }
+        else {
+             expected = `You have deposited Rs ${depositedMoney}`
+        }
+        
         // assert
         expect(expected).toEqual(depositedMoney);
     });
