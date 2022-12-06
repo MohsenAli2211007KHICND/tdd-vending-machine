@@ -1,4 +1,5 @@
 let items = [{'crisps': 100}, {'chocolate': 350}, {'mints': 70}]
+const acceptAmount = [10,20,50,100,500]
 let amount
 module.exports = class Machine {
    
@@ -11,13 +12,13 @@ module.exports = class Machine {
     }
     deposite(depositeMoney){
         amount += depositeMoney;
-        if (depositeMoney %10 ===0){
+        if (acceptAmount.includes(depositeMoney)){
         return depositeMoney
         }
         return null
     }
     selectItem(code) {
-      
+        
         for (let i=0; i<items.length; i++){
             for(let k in items[i]){
                 if (k==code){

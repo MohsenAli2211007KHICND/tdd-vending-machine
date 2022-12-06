@@ -81,5 +81,20 @@ describe('the vending machine', () => {
         // assert
         expect(expected).toEqual(actual);
     });
+    //As a customer, I want to receive change, so that I don’t pay more than the item costs.
+    //- Given I have made a selection, 
+    //- when the item is delivered, 
+    //- then I receive correct change (in correct monetary units)
+    //- `selectItem(code)` returns an object with the item and an array of bills `{item: 'mints', change: [20, 10]}`
+    it('should returns an object with the item and an array of bills  ', () => {
+        // setup
+        const machine = new Machine();
+        // let depositedMoney = machine.deposite(330)
+        let actual = machine.selectItem('mints')
+        // exercise
+        let expected = `{item: 'mints', change: [20, 10]}`
 
+        // assert
+        expect(expected).toEqual("{item: 'mints', change: [20, 10]}");
+    });
 });
